@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>krupa Corporation</title>
+    <!-- style sheet linking  -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- fontawaesom cdn  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- font import  -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+  </head>
+  <body>
+    <style>
+      .nav-item.dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-toggle {
+        color: #333;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      /* .dropdown-toggle::after {
+        content: "\25BC";
+        font-size: 0.7em;
+        margin-left: 5px;
+      } */
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        width: 700px;
+        /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+        z-index: 1;
+        padding: 30px;
+
+        left: 100%;
+        transform: translateX(-10%);
+      }
+
+      .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+      }
+
+      .dropdown-column {
+        width: 48%;
+      }
+
+      .dropdown-column h3 {
+        color: #004499;
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
+
+      .dropdown-column a {
+        color: #333;
+        text-decoration: none;
+        display: block;
+        padding: 5px 0;
+      }
+
+      .dropdown-column a:hover {
+        color: #004499;
+        text-decoration: underline;
+      }
+      @media (max-width: 1448px) {
+        .dropdown-menu {
+          width: 900px;
+        }
+      }
+      @media (max-width: 768px) {
+        .dropdown-menu {
+          min-width: 90vw;
+          left: 0;
+          transform: none;
+        }
+
+        .dropdown-content {
+          flex-direction: column;
+        }
+
+        .dropdown-column {
+          width: 100%;
+        }
+      }
+    </style>
+
+    <nav class="navbar">
+      <div class="upper-nav">
+        <div class="upper-nav-container">
+          <div class="additional-links">
+            <a href="#">krupa Market</a>
+            <!-- <a href="blog.html">Blogs</a></li> -->
+            <!-- <a href="#">Fraud Alert</a> -->
+            <a href="media.html">Media Kit</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+              >Careers</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="main-nav">
+        <div class="main-nav-container">
+          <img
+            src="logo-krupa.png"
+            alt="Reliance Industries Limited"
+            class="logo"
+          />
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle">Our Businesses</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <div class="dropdown-column">
+                    <h3>B2B Commerce</h3>
+                    <a href="EProcurement.html">E Procurement</a>
+
+                    
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- <li></li> -->
+            <li><a href="about.html" class="dropdown-toggle">About Us</a></li>
+
+            <!-- <li class="dropdown">
+          <a href="about.html" class="dropdown-toggle">About Us</a>
+          <div class="dropdown-menu">
+            <div class="dropdown-content">
+              <div class="dropdown-column">
+                <h3></h3>
+                <a href="owners.html">About the Founder</a>
+        <a href="board-of-directors.html">Leadership team</a>
+
+                <a href="media.html">Our Media Kit</a>
+              </div>
+            </div>
+          </div>
+        </li>  -->
+            <li><a href="owners.html">Founder's Message</a></li>
+            <li><a href="blog.html" class="active">Blogs</a></li>
+            <!-- <li><a href="trade_hub.html">Trade Hub</a></li> -->
+            <!-- <li>
+      <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+        >Careers</a
+      >
+    </li> -->
+            <!-- <li><a href="contact.html">Contact Us</a></li> -->
+          </ul>
+          <button class="menu-toggle">☰</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mobile-menu">
+      <button class="close-menu">✕</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="EProcurement.html">E Procurement</a></li>
+        <li><a href="Retail.html">Retail</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="owners.html">Founders's Message</a></li>
+        <!-- <li><a href="board-of-directors.html">Leadership team</a></li> -->
+        <li><a href="media.html">Our Media Kit</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <!-- <li><a href="trade_hub.html">Trade Hub</a></li> -->
+        <li>
+          <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+            >Careers</a
+          >
+        </li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <!-- <div class="stock-info" style="color: #fff; padding: 20px">
+        NSE ₹ 2,953.15 (-3.25%)<br />
+        BSE ₹ 2,953.80 (-3.23%)
+      </div> -->
+    </div>
+
+    <script>
+      const navbar = document.querySelector(".navbar");
+      const upperNav = document.querySelector(".upper-nav");
+      const mainNav = document.querySelector(".main-nav");
+      const menuToggle = document.querySelector(".menu-toggle");
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const closeMenu = document.querySelector(".close-menu");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          upperNav.style.transform = "translateY(-100%)";
+          mainNav.style.backgroundColor = "rgba(255, 255, 255, 1)";
+          mainNav.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+          mainNav.style.position = "fixed";
+        } else {
+          upperNav.style.transform = "translateY(0)";
+          mainNav.style.backgroundColor = "rgba(255, 255, 255, 1)";
+          mainNav.style.boxShadow = "none";
+          mainNav.style.position = "relative";
+          4;
+          mainNav.style.width = "100%";
+          mainNav.style.top = "0px";
+        }
+      });
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.add("active");
+      });
+
+      closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+      });
+    </script>
+    <!-- <main> -->
+    <iframe
+      src="https://krupablog.ghost.io/ "
+      width="100%"
+      height="791vh"
+      style="margin-top: 120px"
+    ></iframe>
+    <!-- </main> -->
+    <footer>
+      <!-- Subscription Form -->
+      <div class="foot-head">
+        <div class="footer-subscribe">
+          <p>Subscribe to our news alerts</p>
+          <form>
+            <input type="email" placeholder="Email Id" />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-container">
+        <!-- Footer Links Section -->
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Policies</h4>
+            <ul>
+              <li><a href="#">Terms & Conditions</a></li>
+              
+              <li><a href="#">Cancellation Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Businesses</h4>
+            <ul>
+              <!-- <li><a href="#">New Energy & New Materials</a></li>
+              <li><a href="#">Digital Services-Jio</a></li> -->
+              <!-- <li><a href="#">Retail</a></li> -->
+              <li><a href="#">B2B commerce</a></li>
+              <li><a href="#">Retail</a></li>
+              <li><a href="http://krupainfrahub.com">Infra Hub</a></li>
+              <!-- Add more links here -->
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <!-- <li><a href="index.html">Home</a></li>
+              <li><a href="aboutus.html">About</a></li> -->
+              <li><a href="blog.html">Blog</a></li>
+              <li>
+                <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+                  >Careers</a
+                >
+              </li>
+              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="http://krupainfrahub.com">Infrahub</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Contact</h4>
+            <ul>
+              <li>
+                <a href="#"
+                  >Krupa Corporation HQ 4th Floor, Sailok Complex, 6/1,<br />
+                  Arundelpet, Guntur, Andhra Pradesh 522002</a
+                >
+              </li>
+              <li><a href="#">+919059577879</a></li>
+              <li>
+                <a href="mailto:support@krupacorp.com">Support@krupacorp.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Section -->
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Krupa Corporation Private Limited. All rights reserved.</p>
+        <div class="policies">
+          <a href="termsandconditions.html">Terms & Conditions</a>
+          <a href="privacy_policy.html">Privacy Policy</a>
+          <a href="#">Report Security Issue</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

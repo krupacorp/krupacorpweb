@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>krupa Corporation</title>
+    <!-- style sheet linking  -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- fontawaesom cdn  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- font import  -->
+    <style>
+      .nav-item.dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-toggle {
+        color: #333;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      /* .dropdown-toggle::after {
+        content: "\25BC";
+        font-size: 0.7em;
+        margin-left: 5px;
+      } */
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        width: 700px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        padding: 30px;
+
+        left: 100%;
+        transform: translateX(-10%);
+      }
+
+      .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+      }
+
+      .dropdown-column {
+        width: 48%;
+      }
+
+      .dropdown-column h3 {
+        color: #004499;
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
+
+      .dropdown-column a {
+        color: #333;
+        text-decoration: none;
+        display: block;
+        padding: 5px 0;
+      }
+
+      .dropdown-column a:hover {
+        color: #004499;
+        text-decoration: underline;
+      }
+      @media (max-width: 1448px) {
+        .dropdown-menu {
+          width: 900px;
+        }
+      }
+      @media (max-width: 768px) {
+        .dropdown-menu {
+          min-width: 90vw;
+          left: 0;
+          transform: none;
+        }
+
+        .dropdown-content {
+          flex-direction: column;
+        }
+
+        .dropdown-column {
+          width: 100%;
+        }
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        font-size: 2.5em;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .subtitle {
+        font-size: 1.2em;
+        color: #0056b3;
+        margin-bottom: 20px;
+      }
+      .content {
+        display: flex;
+        gap: 30px;
+      }
+      .text-content {
+        flex: 1;
+      }
+      .image-content {
+        flex: 1;
+        max-width: 50%;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+      p {
+        line-height: 1.6;
+        color: #444;
+      }
+      .one {
+        padding: 50px;
+        background-color: #00a1ff;
+      }
+      @media (max-width: 768px) {
+        /* .container {
+          background-color: #00A1FF;
+        } */
+        .content {
+          flex-direction: column;
+        }
+        .image-content {
+          max-width: 100%;
+        }
+        .one {
+          padding: 10px;
+        }
+      }
+
+      .two {
+        background-color: white;
+        padding: 30px;
+      }
+
+      .content-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 30px;
+      }
+      .info-section {
+        flex: 1;
+        min-width: 300px;
+      }
+      .media-section {
+        flex: 1;
+        min-width: 300px;
+      }
+      .section-title {
+        font-size: 2.5em;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .description-text {
+        font-size: 1em;
+        line-height: 1.6;
+        color: #555;
+      }
+      .video-wrapper {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        overflow: hidden;
+      }
+      .video-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .video-play-btn {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      .video-play-btn::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 20px solid white;
+        margin-left: 5px;
+      }
+      @media (max-width: 768px) {
+        .content-wrapper {
+          flex-direction: column;
+        }
+        .info-section,
+        .media-section {
+          width: 100%;
+        }
+      }
+      .three {
+        background-color: #00a1ff;
+        padding: 30px;
+      }
+      .wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 20px;
+      }
+      .image-wrapper {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+      }
+      .content-wrapper {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        padding-right: 20px;
+      }
+      .footer-section {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+        padding: 20px;
+        background-color: #f9f5eb;
+      }
+      h2 {
+        color: #4a4a4a;
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      p {
+        line-height: 1.6;
+        /* margin-bottom: 10px; */
+        font-size: 14px;
+      }
+      @media (max-width: 768px) {
+        .grid-layout {
+          grid-template-columns: 1fr;
+        }
+        .image-wrapper,
+        .content-wrapper,
+        .footer-section {
+          grid-column: 1 / 2;
+          grid-row: auto;
+        }
+        .three {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <style>
+      .nav-item.dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-toggle {
+        color: #333;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      /* .dropdown-toggle::after {
+        content: "\25BC";
+        font-size: 0.7em;
+        margin-left: 5px;
+      } */
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        width: 700px;
+        /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+        z-index: 1;
+        padding: 30px;
+
+        left: 100%;
+        transform: translateX(-10%);
+      }
+
+      .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+      }
+
+      .dropdown-column {
+        width: 48%;
+      }
+
+      .dropdown-column h3 {
+        color: #004499;
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
+
+      .dropdown-column a {
+        color: #333;
+        text-decoration: none;
+        display: block;
+        padding: 5px 0;
+      }
+
+      .dropdown-column a:hover {
+        color: #004499;
+        text-decoration: underline;
+      }
+      @media (max-width: 1448px) {
+        .dropdown-menu {
+          width: 900px;
+        }
+      }
+      @media (max-width: 768px) {
+        .dropdown-menu {
+          min-width: 90vw;
+          left: 0;
+          transform: none;
+        }
+
+        .dropdown-content {
+          flex-direction: column;
+        }
+
+        .dropdown-column {
+          width: 100%;
+        }
+      }
+    </style>
+
+    <nav class="navbar">
+      <div class="upper-nav">
+        <div class="upper-nav-container">
+          <div class="additional-links">
+            <a href="#">Infra Hub login</a>
+            <!-- <a href="blog.html">Blogs</a></li> -->
+            <!-- <a href="#">Fraud Alert</a> -->
+            <a href="media.html">Media Kit</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+              >Careers</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="main-nav">
+        <div class="main-nav-container">
+          <img
+            src="logo-krupa.png"
+            alt="Reliance Industries Limited"
+            class="logo"
+          />
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle active">Our Businesses</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <div class="dropdown-column">
+                    <h3>B2B Commerce</h3>
+                    <a href="EProcurement.html">E Procurement</a>
+
+                    <h3>Strategic Ventures</h3>
+                    <a href="Retail.html">Retail</a>
+                    <!-- <a href="software-sol.html">Software Solutions</a> -->
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- <li></li> -->
+            <li><a href="about.html" class="dropdown-toggle">About Us</a></li>
+
+            <!-- <li class="dropdown">
+          <a href="about.html" class="dropdown-toggle">About Us</a>
+          <div class="dropdown-menu">
+            <div class="dropdown-content">
+              <div class="dropdown-column">
+                <h3></h3>
+                <a href="owners.html">About the Founder</a>
+        <a href="board-of-directors.html">Leadership team</a>
+
+                <a href="media.html">Our Media Kit</a>
+              </div>
+            </div>
+          </div>
+        </li>  -->
+            <li><a href="owners.html">Founder's Message</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <!-- <li><a href="trade_hub.html">Trade Hub</a></li> -->
+            <!-- <li>
+      <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+        >Careers</a
+      >
+    </li> -->
+            <!-- <li><a href="contact.html">Contact Us</a></li> -->
+          </ul>
+          <button class="menu-toggle">☰</button>
+        </div>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <button class="close-menu">✕</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="EProcurement.html">E Procurement</a></li>
+        <li><a href="Retail.html">Retail</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="owners.html">Founders's Message</a></li>
+        <!-- <li><a href="board-of-directors.html">Leadership team</a></li> -->
+        <li><a href="media.html">Our Media Kit</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <!-- <li><a href="trade_hub.html">Trade Hub</a></li> -->
+        <li>
+          <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+            >Careers</a
+          >
+        </li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <!-- <div class="stock-info" style="color: #fff; padding: 20px">
+        NSE ₹ 2,953.15 (-3.25%)<br />
+        BSE ₹ 2,953.80 (-3.23%)
+      </div> -->
+    </div>
+
+    <script>
+      const navbar = document.querySelector(".navbar");
+      const upperNav = document.querySelector(".upper-nav");
+      const mainNav = document.querySelector(".main-nav");
+      const menuToggle = document.querySelector(".menu-toggle");
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const closeMenu = document.querySelector(".close-menu");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          upperNav.style.transform = "translateY(-100%)";
+          mainNav.style.backgroundColor = "rgba(255, 255, 255, 1)";
+          mainNav.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+          mainNav.style.position = "fixed";
+        } else {
+          upperNav.style.transform = "translateY(0)";
+          mainNav.style.backgroundColor = "rgba(255, 255, 255, 1)";
+          mainNav.style.boxShadow = "none";
+          mainNav.style.position = "relative";
+          4;
+          mainNav.style.width = "100%";
+          mainNav.style.top = "0px";
+        }
+      });
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.add("active");
+      });
+
+      closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+      });
+    </script>
+    <main>
+      <section class="one">
+        <div class="container">
+          <h1>B2B Commerce</h1>
+          <div class="subtitle">
+            Revolutionizing the Building Materials Supply Chain
+          </div>
+          <div class="content reveal">
+            <div class="text-content">
+              <p>
+                The Future of B2B Commerce The B2B commerce landscape is
+                undergoing a significant transformation as industries embrace
+                digitalization, automation, and data-driven solutions. With
+                traditional procurement methods becoming increasingly
+                inefficient and outdated, businesses are shifting towards smart,
+                integrated platforms that enhance transparency, speed, and
+                cost-effectiveness. This evolution is reshaping sectors like
+                construction, where procurement complexity, volatile pricing,
+                and supply chain challenges often pose significant hurdles.
+              </p>
+              <p>
+                As B2B commerce heads toward a more technology-centric future,
+                platforms like Krupa Infrahub are leading the way, offering
+                intelligent, user-friendly solutions that streamline procurement
+                for building materials. This shift enables businesses to harness
+                the power of data and digital tools to optimize their purchasing
+                decisions, ultimately reducing costs and improving operational
+                efficiency.
+              </p>
+              <p>
+                Reliance and bp are bringing three more deep-water fields onto
+                production, setting new global benchmarks for global costs. With
+                water depths of >2,000m, the R Cluster field in KG D6 Block is
+                the deepest offshore producing field in Asia and India's first
+                ultra-deep-water field. R Cluster, Satellite Cluster, and MJ
+                fields are together producing 30 million metric standard cubic
+                metres per day (MMSCMD) of gas, contributing ~30% of gas
+                production in India.
+              </p>
+              <p>
+                Tailored Solutions for Construction Businesses Krupa Infrahub is
+                built with the future of B2B commerce in mind, providing the
+                following advantage
+                <br />
+                Real-Time Market Data: Stay updated with real-time pricing
+                trends for building materials, allowing businesses to make
+                informed purchasing decisions. Bulk Procurement Benefits: Buyers
+                can leverage economies of scale, negotiating better deals on
+                bulk purchases of essential materials such as cement, steel, and
+                electricals. Automation & Data Analytics: The platform provides
+                valuable insights and analytics to track purchasing patterns,
+                predict future needs, and streamline inventory management. As
+                the B2B commerce sector evolves, Krupa Infrahub offers a
+                solution designed to help construction companies thrive in this
+                dynamic environment. The ability to manage the entire
+                procurement process from a single, integrated platform is what
+                makes Krupa Infrahub a game-changer for the industry.
+              </p>
+            </div>
+            <div class="image-content">
+              <img src="B2B commercw.jpg" alt="Deep-water oil rig" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="two">
+        <div class="content-wrapper">
+          <div class="info-section">
+            <h1 class="section-title">Krupa Infrahub</h1>
+            <p class="description-text">
+              Leading the Digital Procurement Revolution Krupa Corporation
+              recognized this trend early and developed Krupa Infrahub to
+              address the specific needs of the construction industry. The
+              platform bridges the gap between buyers and suppliers, empowering
+              construction businesses with the ability to purchase materials
+              like steel, cement, and aggregates directly from manufacturers. By
+              eliminating intermediaries, the platform ensures businesses get
+              the best value for their money while maintaining a high level of
+              quality and reliability.
+            </p>
+          </div>
+          <div class="media-section">
+            <div class="video-wrapper">
+              <img
+                src="WhatsApp Image 2024-10-17 at 19.29.01_7a5044a3.jpg"
+                alt="Samudra Manthan: Transforming India's Energy Landscape"
+                class="video-image"
+              />
+              <!-- <div class="video-play-btn"></div> -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="three">
+        <div class="wrapper">
+          <div class="grid-layout">
+            <div class="image-wrapper">
+              <img
+                src="b2b-2.jpg"
+                alt="Offshore gas platform with worker"
+              />
+            </div>
+            <div class="content-wrapper1">
+              <h2>Tailored Solutions for Construction Businesses</h2>
+              <p>
+                Krupa Infrahub is built with the future of B2B commerce in mind,
+                providing the following advantages:
+              </p>
+              <p>
+                Real-Time Market Data: Stay updated with real-time pricing
+                trends for building materials, allowing businesses to make
+                informed purchasing decisions. Bulk Procurement Benefits: Buyers
+                can leverage economies of scale, negotiating better deals on
+                bulk purchases of essential materials such as cement, steel, and
+                electricals. Automation & Data Analytics: The platform provides
+                valuable insights and analytics to track purchasing patterns,
+                predict future needs, and streamline inventory management. As
+                the B2B commerce sector evolves, Krupa Infrahub offers a
+                solution designed to help construction companies thrive in this
+                dynamic environment. The ability to manage the entire
+                procurement process from a single, integrated platform is what
+                makes Krupa Infrahub a game-changer for the industry.
+              </p>
+              <p>
+                Sustainability and Scalability Krupa Infrahub also aligns with
+                the growing demand for sustainable practices in the construction
+                industry. By offering eco-friendly materials and partnering with
+                green suppliers, the platform allows businesses to make
+                environmentally conscious decisions without compromising on
+                quality or cost.
+              </p>
+              <p>
+                As the platform scales, Krupa Corporation envisions expanding
+                its product categories and supplier base, ensuring that
+                businesses have access to a broader range of materials.
+                Additionally, Krupa Infrahub plans to integrate financial
+                services that offer businesses better payment options, including
+                financing solutions to ease procurement during project peaks.
+              </p>
+            </div>
+            <div class="footer-section">
+              <h2>Conclusion</h2>
+              <p>
+                The Future of B2B Commerce is Digital As B2B commerce continues
+                to shift toward a fully digital and automated environment,
+                companies like Krupa Corporation are at the forefront of this
+                transformation.
+              </p>
+              <p>
+                Krupa Infrahub's smart procurement solutions not only streamline
+                the purchasing of construction materials but also set a new
+                standard for how businesses can leverage technology to enhance
+                efficiency, cost savings, and sustainability. This
+                forward-thinking approach positions Krupa Corporation as a vital
+                player in the future of B2B commerce, particularly within the
+                construction sector.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+    <footer>
+      <!-- Subscription Form -->
+      <div class="foot-head">
+        <div class="footer-subscribe">
+          <p>Subscribe to our news alerts</p>
+          <form>
+            <input type="email" placeholder="Email Id" />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-container">
+        <!-- Footer Links Section -->
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Policies</h4>
+            <ul>
+              <li><a href="termsandconditions.html">Terms & Conditions</a></li>
+              <li><a href="privacy_policy.html">Privacy Policy</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Refund Policy</a></li>
+              <li><a href="#">Cancellation Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Businesses</h4>
+            <ul>
+              <!-- <li><a href="#">New Energy & New Materials</a></li>
+              <li><a href="#">Digital Services-Jio</a></li> -->
+              <!-- <li><a href="#">Retail</a></li> -->
+              <li><a href="#">B2B commerce</a></li>
+              <li><a href="#">Retail</a></li>
+              <li><a href="http://krupainfrahub.com">Infra Hub</a></li>
+              <!-- Add more links here -->
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <!-- <li><a href="index.html">Home</a></li>
+              <li><a href="aboutus.html">About</a></li> -->
+              <li><a href="blog.html">Blog</a></li>
+              <li>
+                <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+                  >Careers</a
+                >
+              </li>
+              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="http://krupainfrahub.com">Infrahub</a></li>
+              <li><a href="https://yumzy.shop/">Yumzy.Shop</a></li>
+              <li><a href="https://avinyamall.com/">Avinyamall.com</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Contact</h4>
+            <ul>
+              <li>
+                <a href="#"
+                  >Krupa Corporation HQ 4th Floor, Sailok Complex, 6/1,<br />
+                  Arundelpet, Guntur, Andhra Pradesh 522002</a
+                >
+              </li>
+              <li><a href="#">+919059577879</a></li>
+              <li>
+                <a href="mailto:support@krupacorp.com">Support@krupacorp.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Section -->
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Krupa Corporation Private Limited. All rights reserved.</p>
+        <div class="policies">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Legal Notice</a>
+          <a href="#">Report Security Issue</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+

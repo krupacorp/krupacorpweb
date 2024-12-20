@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>krupa Corporation</title>
+    <!-- style sheet linking  -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- fontawaesom cdn  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- font import  -->
+    <style>
+      .nav-item.dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-toggle {
+        color: #333;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      /* .dropdown-toggle::after {
+        content: "\25BC";
+        font-size: 0.7em;
+        margin-left: 5px;
+      } */
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        width: 700px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        padding: 30px;
+
+        left: 100%;
+        transform: translateX(-10%);
+      }
+
+      .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+      }
+
+      .dropdown-column {
+        width: 48%;
+      }
+
+      .dropdown-column h3 {
+        color: #004499;
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
+
+      .dropdown-column a {
+        color: #333;
+        text-decoration: none;
+        display: block;
+        padding: 5px 0;
+      }
+
+      .dropdown-column a:hover {
+        color: #004499;
+        text-decoration: underline;
+      }
+      @media (max-width: 1448px) {
+        .dropdown-menu {
+          width: 900px;
+        }
+      }
+      @media (max-width: 768px) {
+        .dropdown-menu {
+          min-width: 90vw;
+          left: 0;
+          transform: none;
+        }
+
+        .dropdown-content {
+          flex-direction: column;
+        }
+
+        .dropdown-column {
+          width: 100%;
+        }
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        font-size: 2.5em;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .subtitle {
+        font-size: 1.2em;
+        color: #0056b3;
+        margin-bottom: 20px;
+      }
+      .content {
+        display: flex;
+        gap: 30px;
+      }
+      .text-content {
+        flex: 1;
+      }
+      .image-content {
+        flex: 1;
+        max-width: 50%;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+      p {
+        line-height: 1.6;
+        color: #444;
+      }
+      .one {
+        padding: 50px;
+        background-color: #00a1ff;
+      }
+      @media (max-width: 768px) {
+        .container {
+          /* background-color: #00A1FF; */
+        }
+        .content {
+          flex-direction: column;
+        }
+        .image-content {
+          max-width: 100%;
+        }
+        .one {
+          padding: 10px;
+        }
+      }
+
+      .two {
+        background-color: white;
+        padding: 30px;
+      }
+
+      .content-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 30px;
+      }
+      .info-section {
+        flex: 1;
+        min-width: 300px;
+      }
+      .media-section {
+        flex: 1;
+        min-width: 300px;
+      }
+      .section-title {
+        font-size: 2.5em;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      .description-text {
+        font-size: 1em;
+        line-height: 1.6;
+        color: #555;
+      }
+      .video-wrapper {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        overflow: hidden;
+      }
+      .video-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .video-play-btn {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      .video-play-btn::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 20px solid white;
+        margin-left: 5px;
+      }
+      @media (max-width: 768px) {
+        .content-wrapper {
+          flex-direction: column;
+        }
+        .info-section,
+        .media-section {
+          width: 100%;
+        }
+      }
+      .three {
+        background-color: #00a1ff;
+        padding: 30px;
+      }
+      .wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .grid-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding: 20px;
+      }
+      .image-wrapper {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+      }
+      .content-wrapper {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        padding-right: 20px;
+      }
+      .footer-section {
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+        padding: 20px;
+        background-color: #f9f5eb;
+      }
+      h2 {
+        color: #4a4a4a;
+        font-size: 24px;
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      p {
+        line-height: 1.6;
+        /* margin-bottom: 10px; */
+        font-size: 14px;
+      }
+      @media (max-width: 768px) {
+        .grid-layout {
+          grid-template-columns: 1fr;
+        }
+        .image-wrapper,
+        .content-wrapper,
+        .footer-section {
+          grid-column: 1 / 2;
+          grid-row: auto;
+        }
+        .three {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <style>
+      .nav-item.dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-toggle {
+        color: #333;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .dropdown-toggle::after {
+        content: "\25BC";
+        font-size: 0.7em;
+        margin-left: 5px;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        width: 700px;
+        /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+        z-index: 1;
+        padding: 30px;
+
+        left: 100%;
+        transform: translateX(-10%);
+      }
+
+      .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+      }
+
+      .dropdown-column {
+        width: 48%;
+      }
+
+      .dropdown-column h3 {
+        color: #004499;
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
+
+      .dropdown-column a {
+        color: #333;
+        text-decoration: none;
+        display: block;
+        padding: 5px 0;
+      }
+
+      .dropdown-column a:hover {
+        color: #004499;
+        text-decoration: underline;
+      }
+      @media (max-width: 1448px) {
+        .dropdown-menu {
+          width: 900px;
+        }
+      }
+      @media (max-width: 768px) {
+        .dropdown-menu {
+          min-width: 90vw;
+          left: 0;
+          transform: none;
+        }
+
+        .dropdown-content {
+          flex-direction: column;
+        }
+
+        .dropdown-column {
+          width: 100%;
+        }
+      }
+    </style>
+
+    <nav class="navbar">
+      <div class="upper-nav">
+        <div class="upper-nav-container">
+          <div class="additional-links">
+            <a href="#">krupa Market</a>
+            <!-- <a href="blog.html">Blogs</a></li> -->
+            <!-- <a href="#">Fraud Alert</a> -->
+            <a href="media.html">Media Kit</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+              >Careers</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="main-nav">
+        <div class="main-nav-container">
+          <img
+            src="logo-krupa.png"
+            alt="Reliance Industries Limited"
+            class="logo"
+          />
+          <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle">Our Businesses</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <div class="dropdown-column">
+                    <h3>B2B Commerce</h3>
+                    <a href="EProcurement.html">E Procurement</a>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- <li></li> -->
+            <li><a href="about.html" class="dropdown-toggle">About Us</a></li>
+
+            <!-- <li class="dropdown">
+          <a href="about.html" class="dropdown-toggle">About Us</a>
+          <div class="dropdown-menu">
+            <div class="dropdown-content">
+              <div class="dropdown-column">
+                <h3></h3>
+                <a href="owners.html">About the Founder</a>
+        <a href="board-of-directors.html">Leadership team</a>
+
+                <a href="media.html">Our Media Kit</a>
+              </div>
+            </div>
+          </div>
+        </li>  -->
+            <li><a href="owners.html">Founder's Message</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <!-- <li><a href="trade_hub.html">Trade Hub</a></li> -->
+            <!-- <li>
+      <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+        >Careers</a
+      >
+    </li> -->
+            <!-- <li><a href="contact.html">Contact Us</a></li> -->
+          </ul>
+          <button class="menu-toggle">☰</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mobile-menu">
+      <button class="close-menu">✕</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="EProcurement.html">E Procurement</a></li>
+        <li><a href="Retail.html">Retail</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="owners.html">Founders's Message</a></li>
+        <!-- <li><a href="board-of-directors.html">Leadership team</a></li> -->
+        <li><a href="media.html">Our Media Kit</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <!-- <li><a href="trade_hub.html">Trade Hub</a></li> -->
+        <li>
+          <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+            >Careers</a
+          >
+        </li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <!-- <div class="stock-info" style="color: #fff; padding: 20px">
+        NSE ₹ 2,953.15 (-3.25%)<br />
+        BSE ₹ 2,953.80 (-3.23%)
+      </div> -->
+    </div>
+
+    <div class="mobile-menu">
+      <button class="close-menu">✕</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Businesses</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">B2B</a></li>
+            <li><a href="#">Telecom</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <li><a href="trade_hub.html">Trade Hub</a></li>
+        <li>
+          <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+            >Careers</a
+          >
+        </li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="stock-info" style="color: #fff; padding: 20px">
+        NSE ₹ 2,953.15 (-3.25%)<br />
+        BSE ₹ 2,953.80 (-3.23%)
+      </div>
+    </div>
+
+    <script>
+      const navbar = document.querySelector(".navbar");
+      const upperNav = document.querySelector(".upper-nav");
+      const mainNav = document.querySelector(".main-nav");
+      const menuToggle = document.querySelector(".menu-toggle");
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const closeMenu = document.querySelector(".close-menu");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          upperNav.style.transform = "translateY(-100%)";
+          mainNav.style.backgroundColor = "rgba(255, 255, 255, 1)";
+          mainNav.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+          mainNav.style.position = "fixed";
+        } else {
+          upperNav.style.transform = "translateY(0)";
+          mainNav.style.backgroundColor = "rgba(255, 255, 255, 1)";
+          mainNav.style.boxShadow = "none";
+          mainNav.style.position = "relative";
+          4;
+          mainNav.style.width = "100%";
+          mainNav.style.top = "0px";
+        }
+      });
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.add("active");
+      });
+
+      closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+      });
+    </script>
+    <main>
+      <section class="one">
+        <div class="container">
+          <h1>Oil and Gas Exploration & Production</h1>
+          <div class="subtitle">
+            Securing India's energy needs. Accelerating towards a greener gas
+            economy.
+          </div>
+          <div class="content reveal">
+            <div class="text-content">
+              <p>
+                Our quest to secure India's energy needs led us to explore and
+                discover Oil & Gas fields in deep-sea waters. In 2002-2003, we
+                made a significant deep-sea discovery of gas reserves in the
+                Krishna Godavari basin—the KG D6 Block.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                doloremque, saepe libero nulla tempora omnis perferendis debitis
+                pariatur, aperiam reprehenderit voluptatum harum perspiciatis
+                sunt esse blanditiis deserunt nostrum vero maxime delectus!
+                Quisquam, enim vero. Id consectetur atque fugiat nulla, ducimus
+                magni nesciunt saepe minus voluptates, placeat culpa consequatur
+                quasi! Doloribus! Further discoveries in the KG D6 Block have
+                bolstered India's energy security, accelerated India's
+                transition towards a greener gas economy, and made us a pioneer
+                in oil and gas exploration and production. The KG D6 fields are
+                India's first deep-water fields. Oil production in KG D6 fields
+                became the world's fastest green-field deep-water oil
+                development project.
+              </p>
+              <p>
+                Reliance and bp are bringing three more deep-water fields onto
+                production, setting new global benchmarks for global costs. With
+                water depths of >2,000m, the R Cluster field in KG D6 Block is
+                the deepest offshore producing field in Asia and India's first
+                ultra-deep-water field. R Cluster, Satellite Cluster, and MJ
+                fields are together producing 30 million metric standard cubic
+                metres per day (MMSCMD) of gas, contributing ~30% of gas
+                production in India.
+              </p>
+              <p>
+                RIL's Coal Bed Methane (CBM) fields in Sohagpur, MP is India's
+                largest surface footprint hydrocarbon project.
+              </p>
+            </div>
+            <div class="image-content">
+              <img
+                src="https://via.placeholder.com/600x400.png?text=Oil+Rig+Image"
+                alt="Deep-water oil rig"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="two">
+        <div class="content-wrapper">
+          <div class="info-section">
+            <h1 class="section-title">Samudra Manthan</h1>
+            <p class="description-text">
+              Reliance discovered hydrocarbon resources in the KG D6 Block on
+              the East Coast of India. The KG D6 facility is an engineering
+              marvel of a kind, built with state-of-the-art technology. It has
+              become a hub for further oil and gas infrastructure development on
+              the East Coast. Since its inception, the block has supplied nearly
+              2.8 trillion cubic feet of natural gas and about 33 million
+              barrels of crude oil to consumers in the country. This has
+              substituted over US$ 40 billion of energy imports – saving
+              precious foreign exchange for India.
+            </p>
+          </div>
+          <div class="media-section">
+            <div class="video-wrapper">
+              <img
+                src="https://via.placeholder.com/800x450.png?text=Samudra+Manthan+Video"
+                alt="Samudra Manthan: Transforming India's Energy Landscape"
+                class="video-image"
+              />
+              <div class="video-play-btn"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="three">
+        <div class="wrapper">
+          <div class="grid-layout">
+            <div class="image-wrapper">
+              <img
+                src="https://rilstaticasset.akamaized.net/sites/default/files/2023-03/Greener_Gas_Economy.jpg"
+                alt="Offshore gas platform with worker"
+              />
+            </div>
+            <div class="content-wrapper1">
+              <h2>Greener Gas Economy</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+                dicta harum atque, quos hic veritatis animi id ducimus pariatur
+                iste voluptates incidunt eligendi repellat expedita fugit ea
+                laboriosam enim vel minus! Aliquam non magni ipsam assumenda,
+                amet provident sequi laudantium illo, totam, saepe minima enim?
+                Aliquid illum nesciunt expedita autem! Through our joint venture
+                with bp, we have put on production three deep-water fields in
+                the KG D6 Block – R Cluster, Satellite Cluster, and MJ.
+              </p>
+              <p>
+                These fields now account for 30% of India's gas production, and
+                will emerge as a major contributor to India's energy security,
+                particularly in times of significant global energy crisis.
+              </p>
+              <p>
+                We have also formed a joint venture company with bp – India Gas
+                Solutions – for sourcing and marketing gas in India.
+              </p>
+              <p>
+                This will significantly reduce India's dependence on imported
+                gas and meet our country's growing clean energy requirements.
+              </p>
+            </div>
+            <div class="footer-section">
+              <h2>Coal Bed Methane</h2>
+              <p>
+                Reliance has two coal bed methane (CBM) blocks in Madhya Pradesh
+                spread across 995 square km. This is the largest surface
+                footprint project in the E&P sector in India. Production from
+                the CBM fields commenced in 2017. Currently, around 300 wells
+                are on production.
+              </p>
+              <p>
+                Our subsidiary company, Reliance Gas Pipeline Limited, operates
+                the 302 km Shahdol-Phulpur Pipeline from Shahdol (MP) to Phulpur
+                (UP) connecting to India's gas grid. With the development of CBM
+                blocks, Reliance has become the largest player in the
+                unconventional energy sector in India.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+    <footer>
+      <!-- Subscription Form -->
+      <div class="foot-head">
+        <div class="footer-subscribe">
+          <p>Subscribe to our news alerts</p>
+          <form>
+            <input type="email" placeholder="Email Id" />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-container">
+        <!-- Footer Links Section -->
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Policies</h4>
+            <ul>
+              <li><a href="termsandconditions.html">Terms & Conditions</a></li>
+              <li><a href="privacy_policy.html">Privacy Policy</a></li>
+              
+              <li><a href="#">Cancellation Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Businesses</h4>
+            <ul>
+              <!-- <li><a href="#">New Energy & New Materials</a></li>
+              <li><a href="#">Digital Services-Jio</a></li> -->
+              <!-- <li><a href="#">Retail</a></li> -->
+              <li><a href="#">B2B commerce</a></li>
+              <li><a href="#">Retail</a></li>
+              <li><a href="http://krupainfrahub.com">Infra Hub</a></li>
+              <!-- Add more links here -->
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <!-- <li><a href="index.html">Home</a></li>
+              <li><a href="aboutus.html">About</a></li> -->
+              <li><a href="blog.html">Blog</a></li>
+              <li>
+                <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+                  >Careers</a
+                >
+              </li>
+              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="http://krupainfrahub.com">Infrahub</a></li>
+              <li><a href="https://yumzy.shop/">Yumzy.Shop</a></li>
+              <li><a href="https://avinyamall.com/">Avinyamall.com</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Contact</h4>
+            <ul>
+              <li>
+                <a href="#"
+                  >Krupa Corporation HQ 4th Floor, Sailok Complex, 6/1,<br />
+                  Arundelpet, Guntur, Andhra Pradesh 522002</a
+                >
+              </li>
+              <li><a href="#">+919059577879</a></li>
+              <li>
+                <a href="mailto:support@krupacorp.com">Support@krupacorp.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Section -->
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Krupa Corporation Private Limited. All rights reserved.</p>
+        <div class="policies">
+          <a href="termsandconditions.html">Terms & Conditions</a>
+          <a href="privacy_policy.html">Privacy Policy</a>
+          <a href="#">Report Security Issue</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Krupa Corporation</title>
+    <meta
+      name="description"
+      content="
+"
+    />
+
+    <link href="/" rel="canonical" />
+
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="" />
+    <link rel="icon" type="image/x-icon" href="fav.png" />
+
+    <!-- style sheet linking  -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- fontawaesom cdn  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- font import  -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+      header {
+        background-image: url(banner2.png);
+          background-size: cover;
+        height: 750px;
+      }
+      @media screen and (max-width: 500px) {
+        header {
+          background-image: url(banner-mobile.jpg);
+          background-size: cover;
+          height: 700px;
+        }
+      }
+      .sidebyside {
+        display: flex;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: white;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .sidebyside .content {
+        font-family: "Jost", system-ui;
+        padding: 30px;
+        max-width: 800px;
+      }
+      .sidebyside .content h1 {
+        font-weight: 200;
+        font-size: 40px;
+      }
+      .sidebyside .content p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+      }
+      .sectionHeading {
+        font-size: 40px;
+        color: #01a1ff;
+      }
+      @media (max-width: 768px) {
+        .sidebyside {
+          flex-direction: column;
+        }
+        /* .sidebyside .content p {
+        } */
+      }
+
+      /* cards  */
+      .cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .cards h1 {
+        color: #0099ff;
+        margin-bottom: 30px;
+        font-weight: 400;
+        font-size: 28px;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .card {
+        background-color: #0099ff;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .icon {
+        font-size: 48px;
+        margin-bottom: 10px;
+      }
+      .card h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      .card p {
+        font-size: 14px;
+        margin: 0;
+      }
+      .explore-button {
+        margin-top: 30px;
+        padding: 10px 20px;
+        background-color: white;
+        color: black;
+        border: 1px solid #0099ff;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .founder {
+        background-color: #ebebeb;
+        padding: 40px;
+      }
+      .founder-card {
+        max-width: 900px;
+        display: flex;
+        margin: 0 auto;
+        background-color: white;
+        /* border-radius: 30px; */
+      }
+      .founder-card .content {
+        background-color: #0099ff;
+        color: white;
+        width: 50%;
+        padding: 30px;
+        /* border-radius: 30px; */
+      }
+      @media (max-width: 768px) {
+        .founder-card {
+          flex-direction: column-reverse;
+        }
+      }
+
+      /* marquee  */
+      /* marquee section */
+      .marquee-section {
+        background-color: var(--black);
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 1600px;
+        position: relative;
+        margin: 0 auto;
+      }
+
+      /* marquee content animation */
+      .marquee-content {
+        display: inline-block;
+        animation: marquee 30s linear infinite;
+        animation-play-state: running;
+        will-change: transform;
+      }
+
+      .marquee-item {
+        display: inline-block;
+        flex-shrink: 0;
+        width: 200px;
+        height: 200px;
+
+        margin-left: 40px;
+      }
+
+      /* setting image size and fit */
+      .marquee-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: filter 0.9s ease;
+      }
+
+      /* keyframes for the scrolling animation */
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .marquee-section:hover .marquee-content {
+        animation-play-state: paused;
+      }
+
+      /* building the next big thing styling */
+      .section {
+        text-align: center;
+        background-color: #fdf2df;
+        padding: 100px 20px; /* Add padding for spacing */
+      }
+
+      .we-care h1 {
+        font-size: 5rem;
+        font-weight: bold;
+        letter-spacing: 5px;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+
+        color: #0099ff;
+      }
+
+      .description {
+        font-size: 1.2rem;
+        color: #333;
+        max-width: 800px;
+        margin: 20px auto 0;
+        line-height: 1.6;
+      }
+
+      /* services styling  */
+      .services {
+        background-color: #0099ff;
+      }
+      .services-container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .services-title {
+        font-weight: 300;
+        color: white;
+      }
+      .services-nav {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 40px;
+      }
+      .services-nav button {
+        background: none;
+        border: none;
+        color: black;
+        font-size: 21px;
+        cursor: pointer;
+        padding: 5px 0;
+      }
+      .services-nav button.active {
+        border-bottom: 2px solid black;
+      }
+      .services-content {
+        display: flex;
+        gap: 40px;
+      }
+      .services-text-content {
+        flex: 1;
+      }
+      .services-text-content p {
+        color: white;
+      }
+      .services-title {
+        font-size: 48px;
+        font-family: Georgia, serif;
+        margin-bottom: 20px;
+      }
+      .services-image-content {
+        flex: 1;
+      }
+      .services-image-content img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+      .services-read-more {
+        display: inline-flex;
+        align-items: center;
+        background: none;
+        border: 1px solid white;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      .services-read-more::after {
+        content: "→";
+        margin-left: 10px;
+      }
+      @media (max-width: 768px) {
+        .services-content {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+        .services-nav button {
+          font-size: 16px;
+        }
+      }
+
+      /* news  */
+      .news-room {
+        padding: 20px;
+        background-color: #fdf2df;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .news-room h1 {
+        max-width: 100%;
+        margin: 0 auto;
+        font-size: 40px;
+        font-weight: 300;
+        color: #00a1ff;
+        text-align: center;
+      }
+
+      .news-container,
+      .whats-new {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+
+        gap: 20px;
+      }
+      .news-container {
+        flex-direction: column-reverse;
+      }
+      .whats-new {
+        flex-direction: column;
+      }
+      .content1 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content1 p {
+        font-size: 24px;
+        font-weight: 300;
+        margin-top: 20px;
+      }
+
+      .underline {
+        border-bottom: 1px solid black;
+      }
+
+      .content1 h3 {
+        font-weight: 100;
+        color: blue;
+      }
+
+      .rel-logos {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .rel-logos img {
+        width: 100%;
+        box-shadow: 0 14px 24px rgba(62, 57, 107, 0.2);
+      }
+
+      .news-card {
+        width: 90%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+        margin: 0 auto;
+      }
+      .underline {
+        padding-bottom: 40px;
+      }
+      .news-card .logo {
+        width: 150px;
+        margin: 0 auto;
+      }
+
+      @media (min-width: 768px) {
+        .news-room {
+          padding: 30px;
+          gap: 30px;
+        }
+
+        .news-room h1 {
+          font-size: 75px;
+        }
+
+        .news-container {
+          flex-direction: row;
+          justify-content: space-around;
+        }
+
+        .content1 {
+          width: 390px;
+        }
+
+        .content1 p {
+          font-size: 30px;
+          margin-top: 100px;
+        }
+
+        .rel-logos {
+          width: 600px;
+        }
+
+        .whats-new {
+          flex-direction: row;
+          justify-content: space-around;
+        }
+
+        .news-card {
+          width: 350px;
+        }
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.5s ease-out;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Staggered reveal for news cards */
+      .whats-new .news-card:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+      .whats-new .news-card:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+      .whats-new .news-card:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <style>
+      .nav-item.dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-toggle {
+        color: #333;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      /* .dropdown-toggle::after {
+        content: "\25BC";
+        font-size: 0.7em;
+        margin-left: 5px;
+      } */
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        width: 700px;
+        /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+        z-index: 1;
+        padding: 30px;
+
+        left: 100%;
+        transform: translateX(-10%);
+      }
+
+      .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+      }
+
+      .dropdown-column {
+        width: 48%;
+      }
+
+      .dropdown-column h3 {
+        color: #004499;
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
+
+      .dropdown-column a {
+        color: #333;
+        text-decoration: none;
+        display: block;
+        padding: 5px 0;
+      }
+
+      .dropdown-column a:hover {
+        color: #004499;
+        text-decoration: underline;
+      }
+      @media (max-width: 1448px) {
+        .dropdown-menu {
+          width: 900px;
+        }
+      }
+      @media (max-width: 768px) {
+        .dropdown-menu {
+          min-width: 90vw;
+          left: 0;
+          transform: none;
+        }
+
+        .dropdown-content {
+          flex-direction: column;
+        }
+
+        .dropdown-column {
+          width: 100%;
+        }
+      }
+    </style>
+
+    <nav class="navbar">
+      <div class="upper-nav">
+        <div class="upper-nav-container">
+          <div class="additional-links">
+            <a href="#">krupa Market</a>
+            <!-- <a href="blog.html">Blogs</a></li> -->
+            <!-- <a href="#">Fraud Alert</a> -->
+            <a href="media.html">Media Kit</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+              >Careers</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="main-nav">
+        <div class="main-nav-container">
+          <img
+            src="logo-krupa.png"
+            alt="Reliance Industries Limited"
+            class="logo"
+          />
+          <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle">Our Businesses</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <div class="dropdown-column">
+                    <h3>B2B Commerce</h3>
+                    <a href="EProcurement.html">E Procurement</a>
+
+                    
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- <li></li> -->
+            <li><a href="about.html" class="dropdown-toggle">About Us</a></li>
+
+            <!-- <li class="dropdown">
+              <a href="about.html" class="dropdown-toggle">About Us</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <div class="dropdown-column">
+                    <h3></h3>
+                    <a href="owners.html">About the Founder</a>
+            <a href="board-of-directors.html">Leadership team</a>
+
+                    <a href="media.html">Our Media Kit</a>
+                  </div>
+                </div>
+              </div>
+            </li>  -->
+            <li><a href="owners.html">Founder's Message</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <!-- <li><a href="trade_hub.html">Trade Hub</a></li> -->
+            <!-- <li>
+          <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+            >Careers</a
+          >
+        </li> -->
+            <!-- <li><a href="contact.html">Contact Us</a></li> -->
+          </ul>
+          <button class="menu-toggle">☰</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mobile-menu">
+      <button class="close-menu">✕</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="EProcurement.html">E Procurement</a></li>
+        <li><a href="Retail.html">Retail</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="owners.html">Founders's Message</a></li>
+        <!-- <li><a href="board-of-directors.html">Leadership team</a></li> -->
+        <li><a href="media.html">Our Media Kit</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <!-- <li><a href="trade_hub.html">Trade Hub</a></li> -->
+        <li>
+          <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+            >Careers</a
+          >
+        </li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <!-- <div class="stock-info" style="color: #fff; padding: 20px">
+        NSE ₹ 2,953.15 (-3.25%)<br />
+        BSE ₹ 2,953.80 (-3.23%)
+      </div> -->
+    </div>
+
+    <script>
+      const navbar = document.querySelector(".navbar");
+      const upperNav = document.querySelector(".upper-nav");
+      const mainNav = document.querySelector(".main-nav");
+      const menuToggle = document.querySelector(".menu-toggle");
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const closeMenu = document.querySelector(".close-menu");
+     // Add this to handle the initial state
+window.onload = () => {
+  if (window.scrollY > 50) {
+    upperNav.style.transform = "translateY(-100%)";
+    mainNav.style.backgroundColor = "rgba(255, 255, 255, 1)";
+    mainNav.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+    mainNav.style.position = "fixed";
+  }
+};
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    upperNav.style.transform = "translateY(-100%)";
+    mainNav.style.backgroundColor = "rgba(255, 255, 255, 1)";
+    mainNav.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+    mainNav.style.position = "fixed";
+  } else {
+    upperNav.style.transform = "translateY(0)";
+    mainNav.style.backgroundColor = "rgba(255, 255, 255, 1)";
+    mainNav.style.boxShadow = "none";
+    mainNav.style.position = "relative";
+    mainNav.style.width = "100%";
+    mainNav.style.top = "0px";
+  }
+});
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.add("active");
+      });
+
+      closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+      });
+    </script>
+    <style>
+      .banner-but-container {
+        position: relative;
+        left: 10%;
+        top: 50%;
+        display: flex;
+        gap: 50px;
+      }
+      @media screen and (max-width: 500px) {
+        .banner-but-container {
+          position: relative;
+          left: 2%;
+          top: 46%;
+          display: flex;
+          gap: 50px;
+        }
+      }
+     
+    </style>
+    <main>
+      <!-- main banner  -->
+      <header class="header">
+        <div class="banner-but-container">
+          <a
+            href="about.html"
+            class="bannerbutton"
+            style="
+              border: 2px solid white;
+              padding: 10px 30px;
+              color: white;
+              text-decoration: none;
+              border-radius: 40px;
+            "
+            >About Us</a
+          >
+          <a
+            href="owners.html"
+            class="bannerbutton"
+            style="
+              border: 2px solid white;
+              padding: 10px 30px;
+              color: white;
+              text-decoration: none;
+              border-radius: 40px;
+            "
+            >Founder's Message</a
+          >
+        </div>
+      </header>
+      <style>
+        @media screen and (max-width: 500px) {
+          .we-care h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 5px;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            color: #0099ff;
+          }
+          .description {
+            font-size: 20px;
+          }
+        }
+      </style>
+
+      <div class="section">
+        <div class="we-care reveal">
+          <h1 class="index-text">Building The Next Big Thing</h1>
+        </div>
+        <p class="description">Leading forward Horizons</p>
+      </div>
+      <style>
+        .reveal {
+          font-size: 65px;
+          color: #0099ff;
+          text-align: center;
+          font-weight: 400;
+        }
+        @media screen and (max-width: 500px) {
+          .reveal {
+            font-size: 36px;
+          }
+        }
+      </style>
+
+      <!-- marquee  -->
+      <section class="marquee-section">
+        <h1 class="reveal">OUR PARTNERS</h1>
+
+        <div class="marquee-content">
+          <div class="marquee-item">
+            <img src="1.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="2.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="3.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="4.png" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="5.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="6.png" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="7.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="8.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="9.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="10.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="11.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="12.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="13.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="14.png" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="15.png" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="16.png" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="17.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="18.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="19.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="20.png" alt="Client Logo" />
+          </div>
+        </div>
+        <div class="marquee-content">
+          <div class="marquee-item">
+            <img src="1.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="2.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="3.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="4.png" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="5.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="6.png" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="7.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="8.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="9.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="10.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="11.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="12.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="13.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="14.png" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="15.png" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="16.png" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="17.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="18.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="19.webp" alt="Client Logo" />
+          </div>
+          <div class="marquee-item">
+            <img src="20.png" alt="Client Logo" />
+          </div>
+        </div>
+      </section>
+
+      <!-- <div class="sidebyside">
+                <div class="content">
+                    <h1>
+                        <h1 class="sectionHeading"><b>Building the next big thing
+                        </b></h1>
+                    </h1>
+                    <p>Krupa Corporation's adept resource management strategies
+                        reflect its commitment to steering India's economic course with prudence and
+                        foresight. By optimizing the utilization of critical resources, the corporation
+                        bolsters the foundations of the nation's prosperity, ensuring their availability for
+                        both current and future generations. This emphasis on responsible stewardship speaks
+                        volumes about its role as a custodian of India's invaluable assets.</p>
+                </div>
+                <img src="logo1.png" alt="" style="height: 300px ;width: 300px;">
+
+            </div> -->
+      <style>
+        .services {
+          font-size: 17px;
+        }
+      </style>
+
+      <section class="services" style="padding: 30px">
+        <div class="services-container">
+          <nav class="services-nav">
+            <button
+              class="active"
+              data-topic="B2BProcurementExcellence"
+              style="color: black"
+            >
+              B2B Procurement Excellence
+            </button>
+            <button data-topic="SupportingRetailers">
+              Supporting Retailers
+            </button>
+            <!-- <button data-topic="SoftwareSolutions">Software Solutions</button> -->
+          </nav>
+          <div class="services-content">
+            <div class="services-text-content">
+              <h1 class="services-title" id="title">
+                B2B Procurement Excellence
+              </h1>
+              <p id="description">
+                Our growth strategy is defined by our business acumen and our
+                corporate responsibility. Our commitment to sustainable
+                value-creation demonstrates the principle that we care for our
+                people and our planet.
+              </p>
+              <p id="additional-info">
+                Our mission remains to continue growing as a responsible
+                organisation that enriches lives, while striving for economic
+                and ecological sustainability. while ensuring sustainability
+                through circular materials.
+              </p>
+              <a
+                href="#"
+                style="text-decoration: none"
+                class="services-read-more"
+                >read more</a
+              >
+            </div>
+            <div class="services-image-content">
+              <img
+                id="topic-image"
+                src="Home-procrucment.jpg"
+                alt="Sustainability Image"
+              />
+            </div>
+          </div>
+        </div>
+
+        <script>
+          const topics = {
+            B2BProcurementExcellence: {
+              title: "B2B Procurement Excellence",
+              description:
+                "Our growth strategy is defined by our business acumen and our corporate responsibility. Our commitment to sustainable value-creation demonstrates the principle that we care for our people and our planet.",
+              additionalInfo:
+                "Our mission remains to continue growing as a responsible organisation that enriches lives, while striving for economic and ecological sustainability.  Reliance has set an ambitious target to become a net-zero carbon company by 2035.",
+              image: "Home-procrucment.jpg",
+            },
+            SupportingRetailers: {
+              title: "Supporting Retailers",
+              description:
+                "At Reliance, innovation is at the core of our business strategy. We continuously strive to develop groundbreaking technologies and solutions.",
+              additionalInfo:
+                "Our R&D teams work tirelessly to push the boundaries of what's possible, creating innovative products and services that address global challenges and improve lives.",
+              image: "home support.jpeg",
+            },
+            // SoftwareSolutions: {
+            //   title: "Software Solutions",
+            //   description:
+            //     "Reliance is committed to making a positive impact on society and the environment. Our initiatives span across education, healthcare, rural development, and environmental conservation.",
+            //   additionalInfo:
+            //     "Through our various CSR programs and sustainable business practices, we aim to create lasting value for communities and contribute to India's socio-economic progress.",
+            //   image: "software.jpeg",
+            // },
+          };
+
+          function updateContent(topic) {
+            document.getElementById("title").textContent = topics[topic].title;
+            document.getElementById("description").textContent =
+              topics[topic].description;
+            document.getElementById("additional-info").textContent =
+              topics[topic].additionalInfo;
+            document.getElementById("topic-image").src = topics[topic].image;
+            document.getElementById(
+              "topic-image"
+            ).alt = `${topics[topic].title} Image`;
+
+            // Update active button
+            document
+              .querySelectorAll(".services-nav button")
+              .forEach((btn) => btn.classList.remove("active"));
+            document
+              .querySelector(`button[data-topic="${topic}"]`)
+              .classList.add("active");
+          }
+
+          document
+            .querySelectorAll(".services-nav button")
+            .forEach((button) => {
+              button.addEventListener("click", function () {
+                const topic = this.getAttribute("data-topic");
+                updateContent(topic);
+              });
+            });
+        </script>
+      </section>
+
+      <!-- <section class="founder">
+                <div class="founder-card">
+                    <div class="content">
+                        <h3 class="section-heading text-white">Growth For Greater Things
+                        </h3>
+                        <p class="text-white mb-4">
+                            "We persistently embrace our vision of 'Growth For Greater
+                            Things', striving to become a preeminent force in industries
+                            that foster growth, while upholding ethical standards and making
+                            meaningful contributions to the progress of our nation."
+                        </p>
+                        <p class="ceo">Pradeep Devarakonda<span>Founder & CEO, Krupa Corporation</span></p>
+                    </div>
+                    <img src="ceo.png" alt="" style="width: 370px;" >
+                </div>
+            </section> -->
+      <style></style>
+
+      <!-- <section class="news-room" style="background-color: #fdf2df">
+        <h1 class="reveal" style="position: relative">News</h1>
+        <div class="news-container reveal">
+          <div class="content1">
+            <div></div>
+            <p class="underline">
+              Reliance Retail Ventures and Delta Galil Announce Strategic
+              Partnership in India
+            </p>
+            <a>RIL Communication | 10 Sep, 2024</a>
+          </div>
+
+          <div class="rel-logos">
+            <img
+              src="banner1.png"
+              alt="Reliance and Delta Galil logos"
+            />
+          </div>
+        </div>
+        <div class="whats-new">
+          <div class="news-card reveal">
+            <div class="lo">
+              <img
+                src="https://rilstaticasset.akamaized.net/sites/default/files/2024-09/ril-press_0.jpg?itok=ayAkuN7-"
+                alt="Krupa Corporation logo"
+                width="300px"
+              />
+            </div>
+            <p class="underline">
+              RIL Board Approves 1:1 Bonus Issue - Largest Bonus Issue In Indian
+              Equity Markets
+            </p>
+            <a href="" style="text-decoration: none"
+              >RIL Communication | 05 Sep, 2024</a
+            >
+          </div>
+          <div class="news-card reveal">
+            <div class="lo">
+              <img
+                src="https://rilstaticasset.akamaized.net/sites/default/files/2024-09/ril-press_0.jpg?itok=ayAkuN7-"
+                alt="Krupa Corporation logo"
+                width="300px"
+              />
+            </div>
+            <p class="underline">
+              RIL Board Approves 1:1 Bonus Issue - Largest Bonus Issue In Indian
+              Equity Markets
+            </p>
+            <a href="" style="text-decoration: none"
+              >RIL Communication | 05 Sep, 2024</a
+            >
+          </div>
+          <div class="news-card reveal">
+            <div class="lo">
+              <img
+                src="https://rilstaticasset.akamaized.net/sites/default/files/2024-09/ril-press_0.jpg?itok=ayAkuN7-"
+                alt="Krupa Corporation logo"
+                width="300px"
+              />
+            </div>
+            <p class="underline">
+              RIL Board Approves 1:1 Bonus Issue - Largest Bonus Issue In Indian
+              Equity Markets
+            </p>
+            <a href="" style="text-decoration: none"
+              >RIL Communication | 05 Sep, 2024</a
+            >
+          </div>
+        </div>
+      </section> -->
+      <!-- <iframe
+        src=" https://kconnect.krupacorp.com/"
+        width="100%"
+        height="791vh"
+        style="margin-top: 120px"
+      ></iframe> -->
+      <style>
+        .yt-main {
+          width: 100%;
+          height: 90vh;
+          background-color: #f5f1e6;
+        }
+        .yt-section {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .yt-section-inner {
+          width: 100%;
+          height: 70%;
+          background-color: #f5f1e6;
+          /* border-radius: 10px; */
+        }
+        @media screen and (max-width: 500px) {
+          .yt-main {
+            width: 100%;
+            height: 44vh;
+            background-color: #f5f1e6;
+          }
+          .yt-section-inner {
+            width: 90%;
+            height: 50%;
+            background-color: #f5f1e6;
+            border-radius: 10px;
+          }
+        }
+      </style>
+      <!-- <section class="yt-main">
+        <div class="yt-section">
+          <div class="yt-section-inner">
+            <iframe
+              width="100%"
+              height="100%"
+              style="border-radius: 10px"
+              src="https://www.youtube.com/embed/poxNe2Xg9oo?si=Ursv2jUSH8R50DM9"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section> -->
+
+      <script>
+        function reveal() {
+          var reveals = document.querySelectorAll(".reveal");
+
+          for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+              reveals[i].classList.add("active");
+            } else {
+              reveals[i].classList.remove("active");
+            }
+          }
+        }
+
+        window.addEventListener("scroll", reveal);
+
+        // To check the scroll position on page load
+        reveal();
+      </script>
+
+      <!-- <iframe
+        src="https://krupacorp.com/blog/"
+        width="100%"
+        height="791vh"
+      ></iframe> -->
+    </main>
+    <!-- footer  -->
+    <footer>
+      <!-- Subscription Form -->
+      <div class="foot-head">
+        <div class="footer-subscribe">
+          <p>Subscribe to our news alerts</p>
+          <form>
+            <input type="email" placeholder="Email Id" />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-container">
+        <!-- Footer Links Section -->
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Policies</h4>
+            <ul>
+              <li><a href="termsandconditions.html">Terms & Conditions</a></li>
+              <li><a href="privacy_policy.html">Privacy Policy</a></li>
+             
+              <li><a href="#">Cancellation Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Businesses</h4>
+            <ul>
+              <!-- <li><a href="#">New Energy & New Materials</a></li>
+              <li><a href="#">Digital Services-Jio</a></li> -->
+              <!-- <li><a href="#">Retail</a></li> -->
+              <li><a href="#">B2B commerce</a></li>
+              <li><a href="#">Retail</a></li>
+              <li><a href="http://krupainfrahub.com">Infra Hub</a></li>
+              <!-- Add more links here -->
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <!-- <li><a href="index.html">Home</a></li>
+              <li><a href="aboutus.html">About</a></li> -->
+              <li><a href="blog.html">Blog</a></li>
+              <li>
+                <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+                  >Careers</a
+                >
+              </li>
+              <li><a href="contact.html">Contact us</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Contact</h4>
+            <ul>
+              <li>
+                <a href="#"
+                  >Krupa Corporation HQ 4th Floor, Sailok Complex, 6/1,<br />
+                  Arundelpet, Guntur, Andhra Pradesh 522002</a
+                >
+              </li>
+              <li><a href="#">+919059577879</a></li>
+              <li>
+                <a href="mailto:support@krupacorp.com">Support@krupacorp.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Section -->
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Krupa Corporation Private Limited. All rights reserved.</p>
+        <div class="policies">
+          <a href="termsandconditions.html">Terms & Conditions</a>
+          <a href="privacy_policy.html">Privacy Policy</a>
+          <a href="#">Report Security Issue</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

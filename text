@@ -1,0 +1,246 @@
+<style>
+    
+/* slider  */
+.slider-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            padding: 40px;
+            background-color: #EBEBEB;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .slide {
+            flex: 0 0 calc(25% - 15px);
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+            min-width: 200px;
+        }
+        .slide img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .slide h2 {
+            color: #0066cc;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .slide p {
+            color: #333;
+            font-size: 14px;
+        }
+        .date {
+            background-color: #0066cc;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 10;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        .continue-reading {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        @media (max-width: 1024px) {
+            .slide {
+                flex: 0 0 calc(33.333% - 15px);
+            }
+        }
+        @media (max-width: 768px) {
+            .slide {
+                flex: 0 0 calc(50% - 15px);
+            }
+        }
+        @media (max-width: 480px) {
+            .slide {
+                flex: 0 0 calc(100% - 15px);
+            }
+        }
+
+</style>
+
+<div class="slider-container">
+                <h1>In the News</h1>
+                <div class="slider">
+                <div class="slide">
+                    <span class="date">SEPTEMBER 11, 2024</span>
+                    <h2>Bajaj Housing Finance draws bids worth $39 bln in hottest India IPO this year</h2>
+                    <p>Bajaj Housing Finance, a unit of Bajaj Finance, has garnered significant in...</p>
+                    <a href="#" class="continue-reading">Continue reading →</a>
+                </div>
+                <div class="slide">
+                    <span class="date">SEPTEMBER 3, 2024</span>
+                    <img src="/api/placeholder/400/300" alt="Sanjiv Bajaj">
+                    <h2>Bajaj Housing will not need more capital in the next few years: Sanjiv Bajaj</h2>
+                    <p>Bajaj Housing Finance Ltd will not need additional capital for its growth i...</p>
+                    <a href="#" class="continue-reading">Continue reading →</a>
+                </div>
+                <div class="slide">
+                    <span class="date">AUGUST 23, 2024</span>
+                    <img src="/api/placeholder/400/300" alt="Ultimate Table Tennis 2024">
+                    <h2>Ultimate Table Tennis 2024: Thiru Udhayanidhi Stalin Inaugurates 17 Days Of Thrilling Action in Chennai</h2>
+                    <p>The Ultimate Table Tennis 2024 (UTT) was officially launched yesterday by T...</p>
+                    <a href="#" class="continue-reading">Continue reading →</a>
+                </div>
+                <div class="slide">
+                    <span class="date">AUGUST 22, 2024</span>
+                    <img src="/api/placeholder/400/300" alt="Bajaj Auto Scooters">
+                    <h2>Bajaj Auto receives approval for 13 vehicles under PLI scheme: Exclusive</h2>
+                    <p>Bajaj Auto has received approval for production-linked incentives (PLI) for...</p>
+                    <a href="#" class="continue-reading">Continue reading →</a>
+                </div>
+              <div class="slide">
+                    <span class="date">AUGUST 22, 2024</span>
+                    <img src="/api/placeholder/400/300" alt="Bajaj Auto Scooters">
+                    <h2>Bajaj Auto receives approval for 13 vehicles under PLI scheme: Exclusive</h2>
+                    <p>Bajaj Auto has received approval for production-linked incentives (PLI) for...</p>
+                    <a href="#" class="continue-reading">Continue reading →</a>
+                </div>
+                <div class="slide">
+                    <span class="date">AUGUST 22, 2024</span>
+                    <img src="/api/placeholder/400/300" alt="Bajaj Auto Scooters">
+                    <h2>Bajaj Auto receives approval for 13 vehicles under PLI scheme: Exclusive</h2>
+                    <p>Bajaj Auto has received approval for production-linked incentives (PLI) for...</p>
+                    <a href="#" class="continue-reading">Continue reading →</a>
+                </div>
+                <div class="slide">
+                    <span class="date">AUGUST 22, 2024</span>
+                    <img src="/api/placeholder/400/300" alt="Bajaj Auto Scooters">
+                    <h2>Bajaj Auto receives approval for 13 vehicles under PLI scheme: Exclusive</h2>
+                    <p>Bajaj Auto has received approval for production-linked incentives (PLI) for...</p>
+                    <a href="#" class="continue-reading">Continue reading →</a>
+                </div>
+              <div class="slide">
+                    <span class="date">AUGUST 22, 2024</span>
+                    <img src="/api/placeholder/400/300" alt="Bajaj Auto Scooters">
+                    <h2>Bajaj Auto receives approval for 13 vehicles under PLI scheme: Exclusive</h2>
+                    <p>Bajaj Auto has received approval for production-linked incentives (PLI) for...</p>
+                    <a href="#" class="continue-reading">Continue reading →</a>
+                </div>
+            </div>
+            <button class="nav-button prev">&lt;</button>
+            <button class="nav-button next">&gt;</button>
+
+
+
+            <script>
+                const slider = document.querySelector('.slider');
+                const slides = document.querySelectorAll('.slide');
+                const prevButton = document.querySelector('.prev');
+                const nextButton = document.querySelector('.next');
+                let currentIndex = 0;
+                let slidesToShow = 4;
+                let slideWidth = 0;
+                let autoSlideInterval;
+        
+                function updateSlidesToShow() {
+                    if (window.innerWidth <= 480) {
+                        slidesToShow = 1;
+                    } else if (window.innerWidth <= 768) {
+                        slidesToShow = 2;
+                    } else if (window.innerWidth <= 1024) {
+                        slidesToShow = 3;
+                    } else {
+                        slidesToShow = 4;
+                    }
+                }
+        
+                function updateSlideWidth() {
+                    slideWidth = slides[0].offsetWidth + 30; 
+                }
+        
+                function updateSlider() {
+                    slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+                }
+        
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % (slides.length - slidesToShow + 1);
+                    updateSlider();
+                }
+        
+                function prevSlide() {
+                    currentIndex = (currentIndex - 1 + (slides.length - slidesToShow + 1)) % (slides.length - slidesToShow + 1);
+                    updateSlider();
+                }
+        
+                function startAutoSlide() {
+                    autoSlideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+                }
+        
+                function stopAutoSlide() {
+                    clearInterval(autoSlideInterval);
+                }
+        
+                prevButton.addEventListener('click', () => {
+                    prevSlide();
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+        
+                nextButton.addEventListener('click', () => {
+                    nextSlide();
+                    stopAutoSlide();
+                    startAutoSlide();
+                });
+        
+                window.addEventListener('resize', () => {
+                    updateSlidesToShow();
+                    updateSlideWidth();
+                    updateSlider();
+                });
+        
+                // Initialize slider
+                updateSlidesToShow();
+                updateSlideWidth();
+                updateSlider();
+                startAutoSlide();
+        
+                // Pause auto-slide when hovering over the slider
+                slider.addEventListener('mouseenter', stopAutoSlide);
+                slider.addEventListener('mouseleave', startAutoSlide);
+            </script>
+
+
+<div class="card zoom">
+    <img src="icon1.png" alt="">
+    <h2>B2B Procurement Excellence</h2>
+    <p>Enabling enterprise clients to visualize the complete construction materials value chain, from procurement to delivery.</p>
+</div>
+<div class="card zoom" >
+    <img src="icon2.png" alt="">
+    <h2>Supporting Retailers</h2>
+    <p>Provides seamless management of purchasing, financing, inventory, delivery, and more— all in one platform.</p>
+</div>
+<div class="card zoom">
+    <img src="icon3.png" alt="">
+    <h2>Software Solutions</h2>
+    <p>Software for construction goods retailers includes inventory management, POS, CRM, and e-commerce tools to streamline operations and enhance efficiency.</p>
+</div>
+</div>
+<a href="#" class="explore-button">Explore More</a>

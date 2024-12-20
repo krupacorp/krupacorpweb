@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>krupa Corporation</title>
+    <!-- style sheet linking  -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- fontawaesom cdn  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- font import  -->
+    <style>
+      .section-one {
+        background-color: #00a1ff;
+        padding-top: 60px;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        /* padding: 20px; */
+        z-index: -20;
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .profile-image {
+        flex: 1;
+        max-width: 400px;
+        margin-right: 40px;
+        opacity: 0;
+        transform: translateX(-100%);
+        animation: slideInLeft 1s ease forwards;
+      }
+      .profile-image img {
+        width: 100%;
+        height: auto;
+
+        border-radius: 10px;
+      }
+      .content {
+        flex: 2;
+        max-width: 600px;
+        opacity: 0;
+        transform: translateX(100%);
+        animation: slideInRight 1s ease forwards 0.5s;
+      }
+      .quote {
+        font-size: 1.2rem;
+        font-style: italic;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .quote::before,
+      .quote::after {
+        content: '"';
+        font-size: 3rem;
+        position: absolute;
+        opacity: 0.3;
+      }
+      .quote::before {
+        top: -20px;
+        left: -20px;
+      }
+      .quote::after {
+        bottom: -21px;
+        right: 187px;
+      }
+      @media screen and (max-width: 500px) {
+        .quote::after {
+          bottom: -20px;
+          right: 3px;
+        }
+      }
+      .name {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      @keyframes slideInLeft {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes slideInRight {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          padding: 20px;
+        }
+        .profile-image {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+      .wrapper {
+        max-width: 1200px;
+        margin: -20px auto;
+        padding: 20px;
+        background-color: #f5f1e6;
+        z-index: 10;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .title {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 20px;
+        font-weight: normal;
+      }
+      .profile-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .description {
+        margin-bottom: 15px;
+      }
+      @media (max-width: 768px) {
+        .wrapper {
+          margin: 10px;
+          padding: 15px;
+        }
+        .title {
+          font-size: 2rem;
+        }
+        .profile-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .gallery-container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 0 20px;
+      }
+      .media-gallery {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+      }
+      .media-card {
+        width: calc(50% - 10px);
+        max-width: 580px;
+        aspect-ratio: 16 / 9;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        background-size: cover;
+        background-position: center;
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1),
+          rgba(0, 0, 0, 0.7)
+        );
+      }
+      .media-content {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        color: white;
+      }
+      .media-title {
+        font-size: 1.5rem;
+        font-weight: normal;
+        margin-bottom: 10px;
+      }
+      .media-date {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+      .play-btn {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 2px solid white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      .play-btn::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-top: 8px solid transparent;
+        border-left: 12px solid white;
+        border-bottom: 8px solid transparent;
+        margin-left: 3px;
+      }
+      .section-three {
+        padding: 30px;
+      }
+      .section-four {
+        padding: 40px;
+        padding-top: 100px;
+      }
+      @media (max-width: 768px) {
+        .media-gallery {
+          flex-direction: column;
+        }
+        .media-card {
+          width: 100%;
+        }
+        .section-three,
+        .section-four {
+          padding: 10px;
+        }
+      }
+      .container-awards {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      .awards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .award-card {
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+        height: 200px;
+        cursor: pointer;
+      }
+      .award-logo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+      .award-details {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #00a1ff;
+        color: white;
+        padding: 15px;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+      }
+      .award-card:hover .award-logo {
+        transform: scale(1.1);
+      }
+      .award-card:hover .award-details {
+        transform: translateY(0);
+      }
+      .award-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .award-description {
+        font-size: 14px;
+      }
+      @keyframes slideUp {
+        from {
+          transform: translateY(100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+      .award-card:hover .award-details {
+        animation: slideUp 0.3s ease forwards;
+      }
+    </style>
+  </head>
+  <body>
+    <style>
+      .nav-item.dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-toggle {
+        color: #333;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      /* .dropdown-toggle::after {
+        content: "\25BC";
+        font-size: 0.7em;
+        margin-left: 5px;
+      } */
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        width: 700px;
+        /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+        z-index: 1;
+        padding: 30px;
+
+        left: 100%;
+        transform: translateX(-10%);
+      }
+
+      .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px;
+      }
+
+      .dropdown-column {
+        width: 48%;
+      }
+
+      .dropdown-column h3 {
+        color: #004499;
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
+
+      .dropdown-column a {
+        color: #333;
+        text-decoration: none;
+        display: block;
+        padding: 5px 0;
+      }
+
+      .dropdown-column a:hover {
+        color: #004499;
+        text-decoration: underline;
+      }
+      @media (max-width: 1448px) {
+        .dropdown-menu {
+          width: 900px;
+        }
+      }
+      @media (max-width: 768px) {
+        .dropdown-menu {
+          min-width: 90vw;
+          left: 0;
+          transform: none;
+        }
+
+        .dropdown-content {
+          flex-direction: column;
+        }
+
+        .dropdown-column {
+          width: 100%;
+        }
+      }
+    </style>
+
+    <nav class="navbar">
+      <div class="upper-nav">
+        <div class="upper-nav-container">
+          <div class="additional-links">
+            <a href="#">krupa Market</a>
+            <!-- <a href="blog.html">Blogs</a></li> -->
+            <!-- <a href="#">Fraud Alert</a> -->
+            <a href="media.html">Media Kit</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+              >Careers</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="main-nav">
+        <div class="main-nav-container">
+          <img
+            src="logo-krupa.png"
+            alt="Reliance Industries Limited"
+            class="logo"
+          />
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle">Our Businesses</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-content">
+                  <div class="dropdown-column">
+                    <h3>B2B Commerce</h3>
+                    <a href="EProcurement.html">E Procurement</a>
+
+                   
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!-- <li></li> -->
+            <li><a href="about.html" class="dropdown-toggle">About Us</a></li>
+
+            <!-- <li class="dropdown">
+          <a href="about.html" class="dropdown-toggle">About Us</a>
+          <div class="dropdown-menu">
+            <div class="dropdown-content">
+              <div class="dropdown-column">
+                <h3></h3>
+                <a href="owners.html">About the Founder</a>
+        <a href="board-of-directors.html">Leadership team</a>
+
+                <a href="media.html">Our Media Kit</a>
+              </div>
+            </div>
+          </div>
+        </li>  -->
+            <li><a href="owners.html" class="active">Founder's Message</a></li>
+            <li><a href="blog.html">Blogs</a></li>
+            <!-- <li><a href="trade_hub.html">Trade Hub</a></li> -->
+            <!-- <li>
+      <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+        >Careers</a
+      >
+    </li> -->
+            <!-- <li><a href="contact.html">Contact Us</a></li> -->
+          </ul>
+          <button class="menu-toggle">☰</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mobile-menu">
+      <button class="close-menu">✕</button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="EProcurement.html">E Procurement</a></li>
+        <li><a href="Retail.html">Retail</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="owners.html">Founders's Message</a></li>
+        <!-- <li><a href="board-of-directors.html">Leadership team</a></li> -->
+        <li><a href="media.html">Our Media Kit</a></li>
+        <li><a href="blog.html">Blogs</a></li>
+        <!-- <li><a href="trade_hub.html">Trade Hub</a></li> -->
+        <li>
+          <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+            >Careers</a
+          >
+        </li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <!-- <div class="stock-info" style="color: #fff; padding: 20px">
+        NSE ₹ 2,953.15 (-3.25%)<br />
+        BSE ₹ 2,953.80 (-3.23%)
+      </div> -->
+    </div>
+
+    <script>
+      const navbar = document.querySelector(".navbar");
+      const upperNav = document.querySelector(".upper-nav");
+      const mainNav = document.querySelector(".main-nav");
+      const menuToggle = document.querySelector(".menu-toggle");
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const closeMenu = document.querySelector(".close-menu");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          upperNav.style.transform = "translateY(-100%)";
+          mainNav.style.backgroundColor = "rgba(255, 255, 255, 1)";
+          mainNav.style.boxShadow = "0 2px 4px rgba(0,0,0,0.1)";
+          mainNav.style.position = "fixed";
+        } else {
+          upperNav.style.transform = "translateY(0)";
+          mainNav.style.backgroundColor = "rgba(255, 255, 255, 1)";
+          mainNav.style.boxShadow = "none";
+          mainNav.style.position = "relative";
+          4;
+          mainNav.style.width = "100%";
+          mainNav.style.top = "0px";
+        }
+      });
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.add("active");
+      });
+
+      closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.remove("active");
+      });
+    </script>
+    <main>
+      <div class="section-one">
+        <div class="container">
+          <div class="profile-image">
+            <img src="ceo.png" alt="Profile Image" />
+          </div>
+          <div class="content">
+            <p class="quote">We are in the path of Leading Forward Horizons</p>
+            <h1 class="name">Pradeep Deverakonda</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrapper">
+        <h1 class="title">Founder and CEO, MD</h1>
+        <div class="profile-grid">
+          <div>
+            <p class="description">
+              As the founder of Krupa Corporation, I am excited to welcome you
+              to our journey in the construction industry. My path to this
+              venture began with a passion for solving complex problems and
+              enhancing efficiency within the construction ecosystem. After
+              working on several business projects, I made the bold decision to
+              drop out of college, dedicating myself to rigorous research and
+              development focused on creating smart construction solutions.
+            </p>
+            <p class="description">
+              At Krupa Corporation, our mission is to revolutionize the way
+              building materials are procured and managed. We recognize the
+              challenges that builders and SMEs face in navigating the supply
+              chain, and we are committed to providing seamless, efficient, and
+              cost-effective procurement solutions. Our approach leverages
+              technology to streamline processes, ensuring that our clients can
+              focus on what they do best—building and creating.
+            </p>
+            <p class="description">
+              We are driven by the vision of building the next big thing in the
+              construction industry. Our commitment to excellence and innovation
+              fuels our ambition to set new benchmarks, transforming the
+              landscape of construction procurement. With every solution we
+              develop, we strive to not only meet the evolving needs of our
+              clients but also to redefine what is possible in this space.
+            </p>
+            <!-- <p class="description">
+              With an aggregate refining capacity of 1.4 million barrels of oil
+              per day at a single location, Jamnagar has become the refining hub
+              of the world and has placed India firmly on the global energy map.
+            </p> -->
+          </div>
+          <div>
+            <p class="description">
+              As we move forward, I invite you to join us on this exciting
+              journey. Together, we can transform the construction landscape,
+              empowering businesses to achieve their goals and create a lasting
+              impact. Thank you for being a part of our vision, and I look
+              forward to the future we will build together.
+              <br /><br />Thank you.
+            </p>
+            <!-- <p class="description">
+              Mukesh Ambani is a member of The Foundation Board of the World
+              Economic Forum. He is an elected Foreign Member of the prestigious
+              United States National Academy of Engineering. He is a member of
+              the Global Advisory Council of Bank of America. He is also a
+              member of the International Advisory Council of The Brookings
+              Institution. He also a member of the Indo-US CEOs Forum, Chair of
+              The British Asian Trust's India Advisory Council, McKinsey &
+              Company International Advisory Council, Stanford Global Advisory
+              Council, Business Council and London School of Economics' India
+              Advisory Group. He also serves as the Chairman of the Board of
+              Governors for Pandit Deendayal Energy University.
+            </p> -->
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="section-three">
+        <div class="gallery-container">
+          <div class="media-gallery">
+            <div
+              class="media-card"
+              style="
+                background-image: url(https://rilstaticasset.akamaized.net/sites/default/files/2022-09/jio-launch-2016.jpg);
+              "
+            >
+              <div class="overlay"></div>
+              <div class="media-content">
+                <h2 class="media-title">
+                  Jio Launch & 2016 Annual General Meeting Speech
+                </h2>
+                <p class="media-date">JUNE 24, 2016, at 2:00 p.m. IST</p>
+              </div>
+              <div class="play-btn"></div>
+            </div>
+            <div
+              class="media-card"
+              style="background-image: url('/api/placeholder/580/326')"
+            >
+              <div class="overlay"></div>
+              <div class="media-content">
+                <h2 class="media-title">CNN interview with Mukesh Ambani</h2>
+                <p class="media-date">FEB 22, 2016</p>
+              </div>
+              <div class="play-btn"></div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!--  -->
+    </main>
+    <footer>
+      <!-- Subscription Form -->
+      <div class="foot-head">
+        <div class="footer-subscribe">
+          <p>Subscribe to our news alerts</p>
+          <form>
+            <input type="email" placeholder="Email Id" />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-container">
+        <!-- Footer Links Section -->
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Policies</h4>
+            <ul>
+              <li><a href="termsandconditions.html">Terms & Conditions</a></li>
+              <li><a href="privacy_policy.html">Privacy Policy</a></li>
+              
+              <li><a href="#">Cancellation Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Businesses</h4>
+            <ul>
+              <!-- <li><a href="#">New Energy & New Materials</a></li>
+              <li><a href="#">Digital Services-Jio</a></li> -->
+              <!-- <li><a href="#">Retail</a></li> -->
+              <li><a href="#">B2B commerce</a></li>
+              <li><a href="#">Retail</a></li>
+              <li><a href="http://krupainfrahub.com">Infra Hub</a></li>
+              <!-- Add more links here -->
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <!-- <li><a href="index.html">Home</a></li>
+              <li><a href="aboutus.html">About</a></li> -->
+              <li><a href="blog.html">Blog</a></li>
+              <li>
+                <a href="https://www.linkedin.com/company/thekrupacorp/jobs/"
+                  >Careers</a
+                >
+              </li>
+              <li><a href="contact.html">Contact us</a></li>
+              <li><a href="http://krupainfrahub.com">Infrahub</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Contact</h4>
+            <ul>
+              <li>
+                <a href="#"
+                  >Krupa Corporation HQ 4th Floor, Sailok Complex, 6/1,<br />
+                  Arundelpet, Guntur, Andhra Pradesh 522002</a
+                >
+              </li>
+              <li><a href="#">+919059577879</a></li>
+              <li>
+                <a href="mailto:support@krupacorp.com">Support@krupacorp.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer Bottom Section -->
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Krupa Corporation Private Limited. All rights reserved.</p>
+        <div class="policies">
+          <a href="termsandconditions.html">Terms & Conditions</a>
+          <a href="privacy_policy.html">Privacy Policy</a>
+          <a href="#">Report Security Issue</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
